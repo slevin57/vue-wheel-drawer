@@ -1,5 +1,5 @@
 <template>
-    <div class="comp-big-wheel">
+    <div class="comp-wheel-drawer">
         <div class="wheel-container" :style="[rotateStyle]">
             <!-- 用于设置自定义背景图及调整角度 -->
             <div
@@ -15,6 +15,7 @@
                 :height="ch">
             </canvas>
         </div>
+        <!-- 按钮插槽 -->
         <div class="pointer-container" @click="_startClick">
             <slot>
                 <div class="pointer-main pointer-main-interaction1">指针</div>
@@ -288,7 +289,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.comp-big-wheel {
+.comp-wheel-drawer {
     position: relative;
     display: inline-block;
 }
