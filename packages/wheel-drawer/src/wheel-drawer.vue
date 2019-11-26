@@ -35,8 +35,8 @@ export default {
             default: () => [
                 { name: "一等奖", id: 234, bgColor: "#fff" },
                 { name: "er等奖", id: 334, bgColor: "pink" },
-                { name: "san等奖", id: 434, bgColor: "#fff" },
-                { name: "shi等奖", id: 534, bgColor: "pink" },
+                { name: "san等奖", id: 434 },
+                { name: "shi等奖", id: 534 },
             ]
         },
         // 转盘的直径
