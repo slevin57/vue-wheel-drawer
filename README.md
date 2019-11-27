@@ -2,7 +2,7 @@
 
 ![vue-wheel-drawer](http://qiniu.cuixiaodao.com/img/vue-wheel-drawer.gif)
 
-![banner](examples/assets/img/banner.png)
+![banner](examples/assets/img/doc/../docs/vue-wheel-drawer.gif)
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 TODO: Put more badges here.
@@ -293,53 +293,7 @@ Vue.use(wheelDrawer)
 <script>
     data(){
         return {
-            prizeList: [
-                {
-                    name: "一等奖冰箱冰箱冰箱冰箱冰箱",
-                    id: 1,
-                    bgColor: "#fff"
-                },
-                {
-                    name: "二等奖：彩电",
-                    id: 2,
-                    bgColor: "#000"
-                },
-                {
-                    name: "二等奖：彩电",
-                    id: 2,
-                    bgColor: "#fff"
-                },
-                {
-                    name: "三等奖：洗衣机",
-                    id: 3,
-                    bgColor: "#000"
-                },
-                {
-                    name: "一等奖：冰箱冰箱冰箱冰箱冰箱",
-                    id: 1,
-                    bgColor: "#fff"
-                },
-                {
-                    name: "二等奖：彩电",
-                    id: 2,
-                    bgColor: "#000"
-                },
-                {
-                    name: "二等奖：彩电",
-                    id: 2,
-                    bgColor: "#fff"
-                },
-                {
-                    name: "三等奖：洗衣机",
-                    id: 3,
-                    bgColor: "#000"
-                },
-                {
-                    name: "三等奖：洗衣机",
-                    id: 3,
-                    bgColor: "#000"
-                },
-            ],
+            prizeList: [...],
             prizeIndex: 0,
         };
     },
