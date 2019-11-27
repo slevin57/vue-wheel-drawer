@@ -1,8 +1,6 @@
 # vue-wheel-drawer
 
-![vue-wheel-drawer](http://qiniu.cuixiaodao.com/img/vue-wheel-drawer.gif)
-
-![banner](examples/assets/img/docs/vue-wheel-drawer.gif)
+![vue-wheel-drawer](examples/assets/img/docs/vue-wheel-drawer.gif)
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 TODO: Put more badges here.
@@ -32,8 +30,10 @@ TODO: Put more badges here.
 
 ## 功能介绍
 
-- [x] 只需要奖品列表即可渲染出一个最基础的转盘
+- [x] 只需要奖品列表即可渲染出一个最基础的但功能完整的转盘
 - [x] 自定义转盘大小
+- [x] 自定义转盘旋转速度
+- [x] 自定义转盘旋转时间
 - [x] 自定义每一块扇形颜色
 - [x] 自定义每一块扇形字体样式（颜色、大小、字体等）
 - [x] 自定义扇形中字体的位置
@@ -67,6 +67,9 @@ Vue.use(wheelDrawer)
 传入指定格式的奖品列表`prizeList`（必须有“name”属性）渲染转盘，每个扇形会随机生成一个背景色。
 然后通过`pointerClick`接收组件发出的开始抽奖点击事件，再传入奖品的下标调用开始抽奖的方法。
 然后通过`rotateOver`接收抽奖完毕事件，做出结果通知。
+
+<details>
+<summary>Show Me Code</summary>
 
 ```vue
 <template>
@@ -119,6 +122,9 @@ Vue.use(wheelDrawer)
     }
 </script>
 ```
+</details>
+
+
 
 ### 为每个扇形指定背景色
 
@@ -410,3 +416,7 @@ Small note: If editing the README, please conform to the [standard-readme](https
 ## License
 
 MIT © 2019 cuixiaodao
+
+
+
+![vue-wheel-drawer](http://qiniu.cuixiaodao.com/img/vue-wheel-drawer.gif)
