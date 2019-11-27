@@ -13,8 +13,12 @@
         <wheel-drawer
             ref="wheelRef"
             :prize-list="prizeList"
+            :bg-img="require('./assets/img/zp2.png')"
+            :bg-deg="30"
+            :font-color="'#333'"
             @pointerClick="startHdl"
             @rotateOver="overHdl">
+            <img src="./assets/img/pointer.png" alt="">
         </wheel-drawer>
     </div>
 </template>
@@ -28,6 +32,26 @@ export default {
         return {
             prizeList: [
                 {
+                    name: "一等奖冰箱冰箱冰箱冰箱冰箱",
+                    id: 1,
+                    bgColor: "#fff"
+                },
+                {
+                    name: "二等奖：彩电",
+                    id: 2,
+                    bgColor: "#000"
+                },
+                {
+                    name: "二等奖：彩电",
+                    id: 2,
+                    bgColor: "#fff"
+                },
+                {
+                    name: "三等奖：洗衣机",
+                    id: 3,
+                    bgColor: "#000"
+                },
+                {
                     name: "一等奖：冰箱冰箱冰箱冰箱冰箱",
                     id: 1,
                     bgColor: "#fff"
@@ -35,6 +59,7 @@ export default {
                 {
                     name: "二等奖：彩电",
                     id: 2,
+                    bgColor: "#000"
                 },
                 {
                     name: "二等奖：彩电",
@@ -44,22 +69,12 @@ export default {
                 {
                     name: "三等奖：洗衣机",
                     id: 3,
+                    bgColor: "#000"
                 },
                 {
                     name: "三等奖：洗衣机",
                     id: 3,
-                },
-                {
-                    name: "三等奖：洗衣机",
-                    id: 3,
-                },
-                {
-                    name: "四等奖：手电筒",
-                    id: 4,
-                },
-                {
-                    name: "安慰奖：女朋友",
-                    id: 5,
+                    bgColor: "#000"
                 },
             ],
             prizeIndex: 4,

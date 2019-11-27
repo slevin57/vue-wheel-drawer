@@ -1,5 +1,7 @@
 # vue-wheel-drawer
 
+![vue-wheel-drawer](http://qiniu.cuixiaodao.com/img/vue-wheel-drawer.gif)
+
 ![banner](examples/assets/img/banner.png)
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
@@ -16,6 +18,10 @@ TODO: Put more badges here.
   - [使用](#%e4%bd%bf%e7%94%a8)
     - [注册](#%e6%b3%a8%e5%86%8c)
     - [最基础用法](#%e6%9c%80%e5%9f%ba%e7%a1%80%e7%94%a8%e6%b3%95)
+    - [为每个扇形指定背景色](#%e4%b8%ba%e6%af%8f%e4%b8%aa%e6%89%87%e5%bd%a2%e6%8c%87%e5%ae%9a%e8%83%8c%e6%99%af%e8%89%b2)
+    - [自定义转盘背景图片](#%e8%87%aa%e5%ae%9a%e4%b9%89%e8%bd%ac%e7%9b%98%e8%83%8c%e6%99%af%e5%9b%be%e7%89%87)
+    - [改变字体颜色](#%e6%94%b9%e5%8f%98%e5%ad%97%e4%bd%93%e9%a2%9c%e8%89%b2)
+    - [自定义指针](#%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8c%87%e9%92%88)
   - [API](#api)
     - [属性](#%e5%b1%9e%e6%80%a7)
     - [事件](#%e4%ba%8b%e4%bb%b6)
@@ -79,7 +85,6 @@ Vue.use(wheelDrawer)
                 {
                     name: "一等奖：冰箱冰箱冰箱冰箱冰箱",
                     id: 1,
-                    bgColor: "#fff"
                 },
                 {
                     name: "二等奖：彩电",
@@ -88,30 +93,165 @@ Vue.use(wheelDrawer)
                 {
                     name: "二等奖：彩电",
                     id: 2,
-                    bgColor: "#fff"
                 },
                 {
                     name: "三等奖：洗衣机",
                     id: 3,
-                },
-                {
-                    name: "三等奖：洗衣机",
-                    id: 3,
-                },
-                {
-                    name: "三等奖：洗衣机",
-                    id: 3,
-                },
-                {
-                    name: "四等奖：手电筒",
-                    id: 4,
-                },
-                {
-                    name: "安慰奖：女朋友",
-                    id: 5,
                 },
             ],
-            prizeIndex: 4,
+            prizeIndex: 0,
+        };
+    },
+    methods :{
+        startHdl(e) {
+            function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) ) + min;
+            }
+            // 生成随机礼物的下标
+            this.prizeIndex = getRndInteger(0, this.prizeList.length-1);
+
+            // 调用组件开始方法，传入下标
+            this.$refs.wheelRef.go(this.prizeIndex);
+        },
+        overHdl() {
+            alert(`抽中了【 ${this.prizeList[this.prizeIndex].name} 】`);
+        }
+    }
+</script>
+```
+
+### 为每个扇形指定背景色
+
+为`prizeList`数组中每个对象增加一个`bgColor`属性即可。
+
+![指定每个扇形背景色](examples/assets/img/docs/bgcolor.png)
+
+```vue
+<template>
+    <wheel-drawer
+        ref="wheelRef"
+        :prize-list="prizeList"
+        @pointerClick="startHdl"
+        @rotateOver="overHdl">
+    </wheel-drawer>
+</template>
+
+<script>
+    data(){
+        return {
+            prizeList: [
+                {
+                    name: "一等奖：冰箱冰箱冰箱冰箱冰箱",
+                    id: 1,
+                    bgColor: "#fff"
+                },
+                {
+                    name: "二等奖：彩电",
+                    id: 2,
+                    bgColor: "#000"
+                },
+                {
+                    name: "二等奖：彩电",
+                    id: 2,
+                    bgColor: "#fff"
+                },
+                {
+                    name: "三等奖：洗衣机",
+                    id: 3,
+                    bgColor: "#000"
+                },
+            ],
+            prizeIndex: 0,
+        };
+    },
+    methods :{
+        startHdl(e) {
+            function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) ) + min;
+            }
+            // 生成随机礼物的下标
+            this.prizeIndex = getRndInteger(0, this.prizeList.length-1);
+
+            // 调用组件开始方法，传入下标
+            this.$refs.wheelRef.go(this.prizeIndex);
+        },
+        overHdl() {
+            alert(`抽中了【 ${this.prizeList[this.prizeIndex].name} 】`);
+        }
+    }
+</script>
+```
+
+### 自定义转盘背景图片
+
+自定义转盘背景图的话，通过`bgImg`将背景图传入，这里注意：图片等分扇形的个数应该与奖品列表长度一致。
+由于canvas渲染第一个扇形是水平位置开始，所以背景切图可能会与奖品位置错位。通过`bgDeg`调整背景图角度即可。
+
+![添加背景图，但角度错位](examples/assets/img/docs/bgimg1.png)    ![调整角度后](examples/assets/img/docs/bgimg2.png)
+
+```vue
+<template>
+    <wheel-drawer
+        ref="wheelRef"
+        :prize-list="prizeList"
+        :bg-img="require('./assets/img/zp2.png')"
+        :bg-deg="30"
+        @pointerClick="startHdl"
+        @rotateOver="overHdl">
+    </wheel-drawer>
+</template>
+
+<script>
+    data(){
+        return {
+            prizeList: [
+                {
+                    name: "一等奖冰箱冰箱冰箱冰箱冰箱",
+                    id: 1,
+                    bgColor: "#fff"
+                },
+                {
+                    name: "二等奖：彩电",
+                    id: 2,
+                    bgColor: "#000"
+                },
+                {
+                    name: "二等奖：彩电",
+                    id: 2,
+                    bgColor: "#fff"
+                },
+                {
+                    name: "三等奖：洗衣机",
+                    id: 3,
+                    bgColor: "#000"
+                },
+                {
+                    name: "一等奖：冰箱冰箱冰箱冰箱冰箱",
+                    id: 1,
+                    bgColor: "#fff"
+                },
+                {
+                    name: "二等奖：彩电",
+                    id: 2,
+                    bgColor: "#000"
+                },
+                {
+                    name: "二等奖：彩电",
+                    id: 2,
+                    bgColor: "#fff"
+                },
+                {
+                    name: "三等奖：洗衣机",
+                    id: 3,
+                    bgColor: "#000"
+                },
+                {
+                    name: "三等奖：洗衣机",
+                    id: 3,
+                    bgColor: "#000"
+                },
+            ],
+            prizeIndex: 0,
         };
     },
     methods :{
@@ -133,6 +273,137 @@ Vue.use(wheelDrawer)
 ```
 
 
+### 改变字体颜色
+
+![自定义文字颜色](examples/assets/img/docs/fontcolor.png)
+
+```vue
+<template>
+    <wheel-drawer
+        ref="wheelRef"
+        :prize-list="prizeList"
+        :bg-img="require('./assets/img/zp2.png')"
+        :bg-deg="30"
+        :font-color="'#333'"
+        @pointerClick="startHdl"
+        @rotateOver="overHdl">
+    </wheel-drawer>
+</template>
+
+<script>
+    data(){
+        return {
+            prizeList: [
+                {
+                    name: "一等奖冰箱冰箱冰箱冰箱冰箱",
+                    id: 1,
+                    bgColor: "#fff"
+                },
+                {
+                    name: "二等奖：彩电",
+                    id: 2,
+                    bgColor: "#000"
+                },
+                {
+                    name: "二等奖：彩电",
+                    id: 2,
+                    bgColor: "#fff"
+                },
+                {
+                    name: "三等奖：洗衣机",
+                    id: 3,
+                    bgColor: "#000"
+                },
+                {
+                    name: "一等奖：冰箱冰箱冰箱冰箱冰箱",
+                    id: 1,
+                    bgColor: "#fff"
+                },
+                {
+                    name: "二等奖：彩电",
+                    id: 2,
+                    bgColor: "#000"
+                },
+                {
+                    name: "二等奖：彩电",
+                    id: 2,
+                    bgColor: "#fff"
+                },
+                {
+                    name: "三等奖：洗衣机",
+                    id: 3,
+                    bgColor: "#000"
+                },
+                {
+                    name: "三等奖：洗衣机",
+                    id: 3,
+                    bgColor: "#000"
+                },
+            ],
+            prizeIndex: 0,
+        };
+    },
+    methods :{
+        startHdl(e) {
+            function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) ) + min;
+            }
+            // 生成随机礼物的下标
+            this.prizeIndex = getRndInteger(0, this.prizeList.length-1);
+
+            // 调用组件开始方法，传入下标
+            this.$refs.wheelRef.go(this.prizeIndex);
+        },
+        overHdl() {
+            alert(`抽中了【 ${this.prizeList[this.prizeIndex].name} 】`);
+        }
+    }
+</script>
+```
+
+
+### 自定义指针
+
+![自定义指针](examples/assets/img/docs/pointer.png)
+
+```vue
+<template>
+    <wheel-drawer
+        ref="wheelRef"
+        :prize-list="prizeList"
+        :bg-img="require('./assets/img/zp2.png')"
+        :bg-deg="30"
+        :font-color="'#333'"
+        @pointerClick="startHdl"
+            <img src="./assets/img/pointer.png" alt="">
+        @rotateOver="overHdl">
+    </wheel-drawer>
+</template>
+
+<script>
+    data(){
+        return {
+            prizeList: [...],
+            prizeIndex: 0,
+        };
+    },
+    methods :{
+        startHdl(e) {
+            function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) ) + min;
+            }
+            // 生成随机礼物的下标
+            this.prizeIndex = getRndInteger(0, this.prizeList.length-1);
+
+            // 调用组件开始方法，传入下标
+            this.$refs.wheelRef.go(this.prizeIndex);
+        },
+        overHdl() {
+            alert(`抽中了【 ${this.prizeList[this.prizeIndex].name} 】`);
+        }
+    }
+</script>
+```
 
 
 ## API
