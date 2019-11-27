@@ -132,6 +132,9 @@ Vue.use(wheelDrawer)
 
 ![指定每个扇形背景色](examples/assets/img/docs/bgcolor.png)
 
+<details>
+<summary>Show Me Code</summary>
+
 ```vue
 <template>
     <wheel-drawer
@@ -187,6 +190,9 @@ Vue.use(wheelDrawer)
     }
 </script>
 ```
+</details>
+
+
 
 ### 自定义转盘背景图片
 
@@ -194,6 +200,9 @@ Vue.use(wheelDrawer)
 由于canvas渲染第一个扇形是水平位置开始，所以背景切图可能会与奖品位置错位。通过`bgDeg`调整背景图角度即可。
 
 ![添加背景图，但角度错位](examples/assets/img/docs/bgimg1.png)    ![调整角度后](examples/assets/img/docs/bgimg2.png)
+
+<details>
+<summary>Show Me Code</summary>
 
 ```vue
 <template>
@@ -277,11 +286,14 @@ Vue.use(wheelDrawer)
     }
 </script>
 ```
-
+</details>
 
 ### 改变字体颜色
 
 ![自定义文字颜色](examples/assets/img/docs/fontcolor.png)
+
+<details>
+<summary>Show Me Code</summary>
 
 ```vue
 <template>
@@ -320,11 +332,15 @@ Vue.use(wheelDrawer)
     }
 </script>
 ```
+</details>
 
 
 ### 自定义指针
 
 ![自定义指针](examples/assets/img/docs/pointer.png)
+
+<details>
+<summary>Show Me Code</summary>
 
 ```vue
 <template>
@@ -364,6 +380,9 @@ Vue.use(wheelDrawer)
     }
 </script>
 ```
+</details>
+
+
 
 
 ## API
