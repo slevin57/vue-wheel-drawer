@@ -2,7 +2,7 @@
 
 ![vue-wheel-drawer](http://qiniu.cuixiaodao.com/img/vue-wheel-drawer.gif)
 
-![banner](examples/assets/img/doc/../docs/vue-wheel-drawer.gif)
+![banner](examples/assets/img/docs/vue-wheel-drawer.gif)
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 TODO: Put more badges here.
