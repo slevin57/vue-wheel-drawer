@@ -141,15 +141,15 @@ Vue.use(wheelDrawer)
 
 | 名称 |  说明 | 类型 | 默认值 |
 | :-- | :-- | :--| :-- |
-| prizeList | 必选。奖品列表,最基本格式：[{name: "一等奖"}, ...] | Array | - |
-| diam | 转盘直径。 | Number | 478 |
+| prizeList | 必选。奖品列表,最基本格式：`[{name: "一等奖"}, ...]` | Array | - |
+| diam | 转盘直径，也就是转盘大小。 | Number | 478 |
 | bgImg | 自定义转盘背景图片。 | String | - |
-| bgDeg | 自定义转盘图片的旋转角度。 | Number | —— |
+| bgDeg | 自定义转盘图片的旋转角度。 | Number | - |
 | fontColor | 扇形中字体颜色 | String | `#FF69B4` |
 | fontWeight | 扇形中字体粗细 | String | `bold` |
 | fontSize | 扇形中字体大小 | String | `"17px"` |
-| fontFamily | 扇形中文字字体 | String | `""Microsoft Yahei,Helvetica Neue,Tahoma,Arial,PingFangSC-Regular,Hiragino Sans GB,sans-serif""` |
-| fontStyle | 设置扇形中字体的`font`属性，也就是文字的大小及样式种类等,通过传递这个属性，可以【更全面】得设置字体样式。同时如果传递了这个属性，则会【忽略】：`fonWeight`, `fontSize`, `fontFamily`。与css中的font属性语法相同,[参考](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font) | String | —— |
+| fontFamily | 扇形中文字字体 | String | `"Microsoft Yahei,Helvetica Neue,Tahoma,Arial,PingFangSC-Regular,Hiragino Sans GB,sans-serif"` |
+| fontStyle | 设置扇形中字体的`font`属性，也就是文字的大小及样式种类等,通过传递这个属性，可以【更全面】得设置字体样式。与css中的font属性语法相同,[参考](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font)。同时如果传递了这个属性，则会【忽略】：`fonWeight`, `fontSize`, `fontFamily`。 | String | — |
 | fontLineWidth | 奖品名称（第一行）的宽度 | Number | 100 |
 | sectorPadding | 每个扇形中文字距离扇形弧边的距离 | Number | 65 |
 | fontGap | 扇形中每行文字垂直方向的间隔 | Number | 20 |
@@ -169,12 +169,12 @@ Vue.use(wheelDrawer)
 
 | 方法名  |  说明    |  参数   |
 | :-- | :-- | :-- |
-| `go`` | 转盘转动 | 抽中的奖品位于列表中的下标 |
+| `go` | 转盘转动 | 抽中的奖品位于列表中的下标 |
 
 
 ## Maintainers
 
-[@git@github.com:slevin57/vue-wheel-drawer.git](https://github.com/git@github.com:slevin57/vue-wheel-drawer.git)
+- cuoxiaodao
 
 ## Contributing
 
