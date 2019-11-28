@@ -14,7 +14,6 @@ TODO: Put more badges here.
   - [功能介绍](#%e5%8a%9f%e8%83%bd%e4%bb%8b%e7%bb%8d)
   - [安装](#%e5%ae%89%e8%a3%85)
   - [使用](#%e4%bd%bf%e7%94%a8)
-    - [注册](#%e6%b3%a8%e5%86%8c)
     - [最基础用法](#%e6%9c%80%e5%9f%ba%e7%a1%80%e7%94%a8%e6%b3%95)
     - [为每个扇形指定背景色](#%e4%b8%ba%e6%af%8f%e4%b8%aa%e6%89%87%e5%bd%a2%e6%8c%87%e5%ae%9a%e8%83%8c%e6%99%af%e8%89%b2)
     - [自定义转盘背景图片](#%e8%87%aa%e5%ae%9a%e4%b9%89%e8%bd%ac%e7%9b%98%e8%83%8c%e6%99%af%e5%9b%be%e7%89%87)
@@ -42,26 +41,41 @@ TODO: Put more badges here.
 
 ## 安装
 
+**安装**
+
 ```bash
-npm i vue-wheel-drawer -D
-# yarn add vue-wheel-drawer -D
+npm i @slevin/vue-wheel-drawer --save
+# yarn add @slevin/vue-wheel-drawer --save
+```
+
+**全局注册**
+
+ES Module
+```js
+import wheelDrawer from '@slevin/vue-wheel-drawer'
+Vue.use(wheelDrawer)
+```
+
+CommonJs
+```js
+const {default: wheelDrawer} = require("@slevin/vue-wheel-drawer")
+Vue.use(wheelDrawer)
+```
+
+Script Link
+```js
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/@slevin/vue-wheel-drawer/dist/vue-wheel-drawer.umd.min.js"></script>
+```
+
+**组件内注册**
+```js
+components: {
+    wheelDrawer: () => import('@slevin/vue-wheel-drawer'),
+}
 ```
 
 ## 使用
-
-### 注册
-
-```js
-// 组件内注册
-components: {
-    wheelDrawer: () => import('../packages/wheel-drawer/src/wheel-drawer'),
-},
-
-
-// 全局注册
-import wheelDrawer form 'vue-wheelDrawer'
-Vue.use(wheelDrawer)
-```
 
 ### 最基础用法
 传入指定格式的奖品列表`prizeList`（必须有“name”属性）渲染转盘，每个扇形会随机生成一个背景色。
@@ -351,8 +365,8 @@ Vue.use(wheelDrawer)
         :bg-deg="30"
         :font-color="'#333'"
         @pointerClick="startHdl"
-            <img src="./assets/img/pointer.png" alt="">
         @rotateOver="overHdl">
+            <img src="./assets/img/pointer.png" alt="">
     </wheel-drawer>
 </template>
 
