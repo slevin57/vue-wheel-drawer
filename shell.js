@@ -1,3 +1,8 @@
+/**
+ * 打包并将打包文件复制到docs目录下，用于github Pages案例展示
+ * 然后同步到远程仓库
+ */
+
 var shell = require("shelljs");
 
 //执行npm run build 命令
