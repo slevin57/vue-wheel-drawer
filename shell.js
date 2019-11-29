@@ -11,6 +11,6 @@ if (shell.exec('npm run build').code !== 0) {
 shell.cp('-r', './dist/*', './docs');
 
 
-// shell.exec('git add .');
-// shell.exec("git commit -m 'autocommit'")
-// shell.exec('git push')
+shell.exec('git add .');
+shell.exec("git commit -m 'autocommit'")
+shell.exec('git push')
