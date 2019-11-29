@@ -23,9 +23,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:case": "node ./shell.js",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name vue-wheel-drawer --dest lib packages/index.js",
-    "showcase": "node ./shell.js"
+    "lib": "vue-cli-service build --target lib --name vue-wheel-drawer --dest lib packages/index.js"
   },
   "dependencies": {
     "core-js": "^3.3.2",

@@ -42,5 +42,9 @@ module.exports = {
                 return options
             })
     },
+    /**
+     * 默认是'/'，因为这里打包后要放到github Pages中作为静态案例页面展示，
+     * 所以需要改为'./'
+     */
     publicPath: './'
 };
