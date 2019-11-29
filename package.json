@@ -1,67 +1,69 @@
 {
-    "name": "@slevin/vue-wheel-drawer",
-    "version": "0.1.2",
-    "private": false,
-    "main": "lib/vue-wheel-drawer.umd.min.js",
-    "keywords": [
-        "vue",
-        "vue-wheel-drawer",
-        "vue-lucky",
-        "vue-rotate",
-        "vue幸运转盘",
-        "vue抽奖转盘",
-        "vue抽奖",
-        "vue大转盘"
+  "name": "@slevin/vue-wheel-drawer",
+  "version": "0.1.2",
+  "private": false,
+  "main": "lib/vue-wheel-drawer.umd.min.js",
+  "keywords": [
+    "vue",
+    "vue-wheel-drawer",
+    "vue-lucky",
+    "vue-rotate",
+    "vue幸运转盘",
+    "vue抽奖转盘",
+    "vue抽奖",
+    "vue大转盘"
+  ],
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:slevin57/vue-wheel-drawer.git"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name vue-wheel-drawer --dest lib packages/index.js",
+    "showcase": "node ./shell.js"
+  },
+  "dependencies": {
+    "core-js": "^3.3.2",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "shelljs": "^0.8.3",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
     ],
-    "files": [
-        "dist"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:slevin57/vue-wheel-drawer.git"
-    },
-    "scripts": {
-        "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build",
-        "lint": "vue-cli-service lint",
-        "lib": "vue-cli-service build --target lib --name vue-wheel-drawer --dest lib packages/index.js"
-    },
-    "dependencies": {
-        "core-js": "^3.3.2",
-        "vue": "^2.6.10"
-    },
-    "devDependencies": {
-        "@vue/cli-plugin-babel": "^4.0.0",
-        "@vue/cli-plugin-eslint": "^4.0.0",
-        "@vue/cli-service": "^4.0.0",
-        "babel-eslint": "^10.0.3",
-        "eslint": "^5.16.0",
-        "eslint-plugin-vue": "^5.0.0",
-        "node-sass": "^4.13.0",
-        "sass-loader": "^8.0.0",
-        "vue-template-compiler": "^2.6.10"
-    },
-    "eslintConfig": {
-        "root": true,
-        "env": {
-            "node": true
-        },
-        "extends": [
-            "plugin:vue/essential",
-            "eslint:recommended"
-        ],
-        "rules": {},
-        "parserOptions": {
-            "parser": "babel-eslint"
-        }
-    },
-    "postcss": {
-        "plugins": {
-            "autoprefixer": {}
-        }
-    },
-    "browserslist": [
-        "> 1%",
-        "last 2 versions"
-    ]
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
