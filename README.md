@@ -65,7 +65,7 @@ Vue.use(wheelDrawer)
 Script Link
 ```js
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script src="https://cdn.jsdelivr.net/npm/@slevin/vue-wheel-drawer/dist/vue-wheel-drawer.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@slevin/vue-wheel-drawer/lib/vue-wheel-drawer.umd.min.js"></script>
 ```
 
 **组件内注册**

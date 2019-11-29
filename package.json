@@ -2,7 +2,7 @@
     "name": "@slevin/vue-wheel-drawer",
     "version": "0.1.1",
     "private": false,
-    "main": "dist/vue-wheel-drawer.umd.min.js",
+    "main": "lib/vue-wheel-drawer.umd.min.js",
     "keywords": [
         "vue",
         "vue-wheel-drawer",
@@ -24,7 +24,7 @@
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
-        "lib": "vue-cli-service build --target lib --name vue-wheel-drawer packages/index.js"
+        "lib": "vue-cli-service build --target lib --name vue-wheel-drawer --dest lib packages/index.js"
     },
     "dependencies": {
         "core-js": "^3.3.2",
