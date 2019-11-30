@@ -1,11 +1,12 @@
 # vue-wheel-drawer
 
+> Canvas生成的vue抽奖转盘。功能完善，自定义项丰富，文档清晰。无任何依赖，简单易懂，开箱即用。
+
 ![vue-wheel-drawer](examples/assets/img/docs/vue-wheel-drawer.gif)
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 TODO: Put more badges here.
 
-> Cavas生成的vue抽奖转盘
 
 ## Table of Contents
 
