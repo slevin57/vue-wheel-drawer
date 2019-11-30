@@ -1,11 +1,12 @@
 # vue-wheel-drawer
 
+[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+
 > Canvas生成的vue抽奖转盘。功能完善，自定义项丰富，文档清晰。无任何依赖，简单易懂，开箱即用。
 
-![vue-wheel-drawer](examples/assets/img/docs/vue-wheel-drawer.gif)
+在线演示：https://slevin57.github.io/vue-wheel-drawer/
 
-[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-TODO: Put more badges here.
+<img style="margin: 50px auto;" src="http://qiniu.cuixiaodao.com/img/vue-wheel-drawer.gif">
 
 
 ## Table of Contents
@@ -145,10 +146,10 @@ components: {
 
 为`prizeList`数组中每个对象增加一个`bgColor`属性即可。
 
-![指定每个扇形背景色](examples/assets/img/docs/bgcolor.png)
-
 <details>
 <summary>Show Me Code</summary>
+
+![指定每个扇形背景色](examples/assets/img/docs/bgcolor.png)
 
 ```vue
 <template>
@@ -214,10 +215,18 @@ components: {
 自定义转盘背景图的话，通过`bgImg`将背景图传入，这里注意：图片等分扇形的个数应该与奖品列表长度一致。
 由于canvas渲染第一个扇形是水平位置开始，所以背景切图可能会与奖品位置错位。通过`bgDeg`调整背景图角度即可。
 
-![添加背景图，但角度错位](examples/assets/img/docs/bgimg1.png)    ![调整角度后](examples/assets/img/docs/bgimg2.png)
+
 
 <details>
 <summary>Show Me Code</summary>
+
+背景图与canvas渲染出转盘的默认角度有错位：
+
+![添加背景图，但角度错位](examples/assets/img/docs/bgimg1.png)    
+
+调整背景图角度：
+
+![调整角度后](examples/assets/img/docs/bgimg2.png)
 
 ```vue
 <template>
@@ -305,10 +314,10 @@ components: {
 
 ### 改变字体颜色
 
-![自定义文字颜色](examples/assets/img/docs/fontcolor.png)
-
 <details>
 <summary>Show Me Code</summary>
+
+![自定义文字颜色](examples/assets/img/docs/fontcolor.png)
 
 ```vue
 <template>
@@ -349,13 +358,12 @@ components: {
 ```
 </details>
 
-
 ### 自定义指针
-
-![自定义指针](examples/assets/img/docs/pointer.png)
 
 <details>
 <summary>Show Me Code</summary>
+
+![自定义指针](examples/assets/img/docs/pointer.png)
 
 ```vue
 <template>
@@ -453,4 +461,4 @@ MIT © 2019 cuixiaodao
 
 
 
-![vue-wheel-drawer](http://qiniu.cuixiaodao.com/img/vue-wheel-drawer.gif)
+![vue-wheel-drawer](examples/assets/img/docs/vue-wheel-drawer.gif)
