@@ -6,7 +6,7 @@
 
 在线演示：https://slevin57.github.io/vue-wheel-drawer/
 
-<img style="margin: 50px auto;" src="http://qiniu.cuixiaodao.com/img/vue-wheel-drawer.gif">
+![vue-wheel-drawer](examples/assets/img/docs/vue-wheel-drawer.gif)
 
 
 ## Table of Contents
@@ -460,5 +460,4 @@ Small note: If editing the README, please conform to the [standard-readme](https
 MIT © 2019 cuixiaodao
 
 
-
-![vue-wheel-drawer](examples/assets/img/docs/vue-wheel-drawer.gif)
+![examples/assets/img/docs/vue-wheel-drawer.gif](http://qiniu.cuixiaodao.com/img/vue-wheel-drawer.gif)
